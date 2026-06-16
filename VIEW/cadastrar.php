@@ -1,3 +1,28 @@
+<?php
+//VIEW/cadastrar.php
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+require_once "../DAL/conexao.php";
+
+$nome    = $_POST['nome_fruta'];
+$preco   = $_POST['preco_quilo'];
+$estoque = $_POST['quantidade_estoque'];
+
+if (inserirFruta($conexao, $nome, $preco, $estoque)) {
+
+    header("Location: index.php");
+    exit;
+} else {
+
+    echo "<div class='alert alert-danger mb-0 rounded-0'>Erro ao cadastrar no banco de dados!</div>";
+    }
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
