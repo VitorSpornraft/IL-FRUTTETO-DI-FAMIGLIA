@@ -24,7 +24,7 @@ $resultado = mysqli_query($conexao, $sql);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link active px-3" href="index.php">Estoque de Frutas</a>
-                    <a class="nav-link text-warning fw-bold px-3" href="#">+ Cadastrar Fruta</a>
+                    <a class="nav-link text-warning fw-bold px-3" href="cadastrar.php">+ Cadastrar Fruta</a>
                 </div>
                 <div class="navbar-nav">
                     <a class="nav-link btn btn-outline-light btn-sm px-3 text-white" href="#">Sair</a>

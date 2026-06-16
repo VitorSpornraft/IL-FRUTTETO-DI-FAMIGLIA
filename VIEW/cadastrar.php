@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hortifruti - Cadastrar Fruta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.php">IL FRUTTETO DI FAMIGLIA</a>
+            <div class="collapse navbar-collapse">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link px-3" href="index.php">Estoque de Frutas</a>
+                    <a class="nav-link text-warning fw-bold px-3 active" href="cadastrar.php">+ Cadastrar Fruta</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link btn btn-outline-light btn-sm px-3 text-white" href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5" style="max-width: 600px;">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-dark text-white p-3">
+                <h4 class="mb-0 fs-5">Nova Fruta no Estoque</h4>
+            </div>
+            <div class="card-body p-4">
+                
+                <form action="#" method="POST">
+                    
+                    <div class="mb-3">
+                        <label for="nome_fruta" class="form-label fw-bold text-secondary">Nome da Fruta</label>
+                        <input type="text" class="form-control" id="nome_fruta" name="nome_fruta" placeholder="Ex: Melancia" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="preco_quilo" class="form-label fw-bold text-secondary">Preço por KG (R$)</label>
+                            <input type="number" step="0.01" class="form-control" id="preco_quilo" name="preco_quilo" placeholder="0.00" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="quantidade_estoque" class="form-label fw-bold text-secondary">Qtd. Inicial (KG)</label>
+                            <input type="number" step="0.1" class="form-control" id="quantidade_estoque" name="quantidade_estoque" placeholder="0.0" required>
+                        </div>
+                    </div>
+
+                    <hr class="text-muted my-4">
+
+                    <div class="d-flex justify-content-between">
+                        <a href="index.php" class="btn btn-outline-secondary px-4">Voltar</a>
+                        <button type="submit" class="btn btn-success px-4 fw-bold">Salvar Fruta</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
