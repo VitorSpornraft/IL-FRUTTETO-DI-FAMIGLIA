@@ -21,14 +21,8 @@ $resultado = mysqli_query($conexao, $sql);
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.php">IL FRUTTETO DI FAMIGLIA</a>
             
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-link active px-3" href="index.php">Estoque de Frutas</a>
-                    <a class="nav-link text-warning fw-bold px-3" href="cadastrar.php">+ Cadastrar Fruta</a>
-                </div>
-                <div class="navbar-nav">
+            <div class="navbar-nav ms-auto">
                     <a class="nav-link btn btn-outline-light btn-sm px-3 text-white" href="#">Sair</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -36,7 +30,7 @@ $resultado = mysqli_query($conexao, $sql);
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="text-secondary font-monospace">Gerenciamento de Estoque</h2>
-            <span class="badge bg-success p-2">Painel Ativo</span>
+            <a href="cadastrar.php" class="btn btn-success fw-bold shadow-sm">+ Cadastrar Nova Fruta</a>
         </div>
 
         <div class="card shadow-sm border-0">

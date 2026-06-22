@@ -36,14 +36,8 @@ if (inserirFruta($conexao, $nome, $preco, $estoque)) {
     <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.php">IL FRUTTETO DI FAMIGLIA</a>
-            <div class="collapse navbar-collapse">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-link px-3" href="index.php">Estoque de Frutas</a>
-                    <a class="nav-link text-warning fw-bold px-3 active" href="cadastrar.php">+ Cadastrar Fruta</a>
-                </div>
-                <div class="navbar-nav">
-                    <a class="nav-link btn btn-outline-light btn-sm px-3 text-white" href="#">Sair</a>
-                </div>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link btn btn-outline-light btn-sm px-3 text-white" href="#">Sair</a>
             </div>
         </div>
     </nav>
@@ -51,7 +45,7 @@ if (inserirFruta($conexao, $nome, $preco, $estoque)) {
     <div class="container mt-5" style="max-width: 600px;">
         <div class="card shadow-sm border-0">
             <div class="card-header bg-dark text-white p-3">
-                <h4 class="mb-0 fs-5">Nova Fruta no Estoque</h4>
+                <h4 class="mb-0 fs-5">Cadastrar Nova Fruta</h4>
             </div>
             <div class="card-body p-4">
                 
