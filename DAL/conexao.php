@@ -1,5 +1,5 @@
 <?php
-// DAL/conexao.php - Arquivo de Conexão Completo
+// DAL/conexao.php
 
 $servidor = "localhost";
 $usuario  = "root";
@@ -25,6 +25,23 @@ function excluirFruta($conexao, $id){
 
     $sql = "DELETE FROM produtos WHERE id = $id";
 
+    return mysqli_query($conexao, $sql);
+}
+
+function buscarFrutaPorId($conexao, $id) {
+    $sql = "SELECT * FROM produtos WHERE id = $id";
+    $resultado = mysqli_query($conexao, $sql);
+
+    return mysqli_fetch_assoc($resultado);
+}
+
+function atualizarFruta($conexao, $id, $nome, $preco, $estoque) {
+    $sql = "UPDATE produtos SET 
+            nome_fruta = '$nome', 
+            preco_quilo = '$preco', 
+            quantidade_estoque = '$estoque' 
+            WHERE id = $id";
+            
     return mysqli_query($conexao, $sql);
 }
 ?>
