@@ -1,23 +1,22 @@
 <?php
 //VIEW/cadastrar.php
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-require_once "../DAL/conexao.php";
+    require_once "../DAL/conexao.php";
 
-$nome    = $_POST['nome_fruta'];
-$preco   = $_POST['preco_quilo'];
-$estoque = $_POST['quantidade_estoque'];
+    $nome    = $_POST['nome_fruta'];
+    $preco   = $_POST['preco_quilo'];
+    $estoque = $_POST['quantidade_estoque'];
 
-if (inserirFruta($conexao, $nome, $preco, $estoque)) {
+    if (inserirFruta($conexao, $nome, $preco, $estoque)) {
 
-    header("Location: index.php");
-    exit;
-} else {
+        header("Location: index.php");
+        exit;
+    } else {
 
-    echo "<div class='alert alert-danger mb-0 rounded-0'>Erro ao cadastrar no banco de dados!</div>";
+        echo "<div class='alert alert-danger mb-0 rounded-0'>Erro ao cadastrar no banco de dados!</div>";
     }
-
 }
 
 ?>
@@ -25,12 +24,14 @@ if (inserirFruta($conexao, $nome, $preco, $estoque)) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hortifruti - Cadastrar Fruta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
@@ -48,9 +49,9 @@ if (inserirFruta($conexao, $nome, $preco, $estoque)) {
                 <h4 class="mb-0 fs-5">Cadastrar Nova Fruta</h4>
             </div>
             <div class="card-body p-4">
-                
+
                 <form action="#" method="POST">
-                    
+
                     <div class="mb-3">
                         <label for="nome_fruta" class="form-label fw-bold text-secondary">Nome da Fruta</label>
                         <input type="text" class="form-control" id="nome_fruta" name="nome_fruta" placeholder="Ex: Melancia" required>
@@ -82,4 +83,5 @@ if (inserirFruta($conexao, $nome, $preco, $estoque)) {
     </div>
 
 </body>
+
 </html>

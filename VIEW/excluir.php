@@ -3,7 +3,7 @@
 
 require_once "../DAL/conexao.php";
 
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     excluirFruta($conexao, $id);
@@ -11,5 +11,3 @@ if(isset($_GET['id'])) {
 
 header("Location: index.php");
 exit;
-
-?>
