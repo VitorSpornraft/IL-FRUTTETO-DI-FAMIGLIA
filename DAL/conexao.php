@@ -59,3 +59,37 @@ function buscarResumoEstoque($conexao)
     $resultado = mysqli_query($conexao, $sql);
     return mysqli_fetch_assoc($resultado);
 }
+
+// CRUD DE USUÁRIOS
+
+function listarUsuarios($conexao) {
+    $sql = "SELECT id, nome, email FROM usuarios";
+    return mysqli_query($conexao, $sql);
+}
+
+function inserirUsuario($conexao, $nome, $email, $senha) {
+    $senhaCripto = md5($senha);
+    $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senhaCripto')";
+    return mysqli_query($conexao, $sql);
+}
+
+function buscarUsuarioPorId($conexao, $id) {
+    $sql = "SELECT id, nome, email FROM usuarios WHERE id = $id";
+    $resultado = mysqli_query($conexao, $sql);
+    return mysqli_fetch_assoc($resultado);
+}
+
+function atualizarUsuario($conexao, $id, $nome, $email, $senha = null) {
+    if (!empty($senha)) {
+        $senhaCripto = md5($senha);
+        $sql = "UPDATE usuarios SET nome = '$nome', email = '$email', senha = '$senhaCripto' WHERE id = $id";
+    } else {
+        $sql = "UPDATE usuarios SET nome = '$nome', email = '$email' WHERE id = $id";
+    }
+    return mysqli_query($conexao, $sql);
+}
+
+function excluirUsuario($conexao, $id) {
+    $sql = "DELETE FROM usuarios WHERE id = $id";
+    return mysqli_query($conexao, $sql);
+}
