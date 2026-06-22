@@ -57,7 +57,7 @@ $resultado = mysqli_query($conexao, $sql);
                                 echo "<td class='text-center'>
                                         <a href='#' class='btn btn-sm btn-info text-white me-1'>Detalhes</a>
                                         <a href='#' class='btn btn-sm btn-warning me-1'>Editar</a>
-                                        <a href='#' class='btn btn-sm btn-danger'>Excluir</a>
+                                        <a href='excluir.php?id=". $fruta['id'] . "' class='btn btn-sm btn-danger' onclick=\"return confirm('Voce tem certeza que deseja excluir a fruta " . $fruta['nome_fruta'] . "?');\">Excluir</a>
                                       </td>";
                                 echo "</tr>";
                             }

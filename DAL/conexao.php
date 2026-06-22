@@ -20,4 +20,11 @@ function inserirFruta($conexao, $nome, $preco, $estoque) {
     return mysqli_query($conexao, $sql);
     
 } 
+
+function excluirFruta($conexao, $id){
+
+    $sql = "DELETE FROM produtos WHERE id = $id";
+
+    return mysqli_query($conexao, $sql);
+}
 ?>
