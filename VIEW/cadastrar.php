@@ -2,7 +2,6 @@
 //VIEW/cadastrar.php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     require_once "../DAL/conexao.php";
 
     $nome    = $_POST['nome_fruta'];
@@ -10,17 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $estoque = $_POST['quantidade_estoque'];
 
     if (inserirFruta($conexao, $nome, $preco, $estoque)) {
-
         header("Location: index.php");
         exit;
     } else {
-
         echo "<div class='alert alert-danger mb-0 rounded-0'>Erro ao cadastrar no banco de dados!</div>";
     }
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hortifruti - Cadastrar Fruta</title>
+    <title>IL FRUTTETO DI FAMIGLIA - Cadastrar Fruta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 

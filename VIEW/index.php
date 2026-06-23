@@ -1,6 +1,15 @@
 <?php
 //VIEW/index.php
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
 require_once "../DAL/conexao.php";
 
 $sql = "SELECT * FROM produtos";
@@ -23,9 +32,22 @@ $resumo = buscarResumoEstoque($conexao);
     <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.php">IL FRUTTETO DI FAMIGLIA</a>
-
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link btn btn-outline-light btn-sm px-3 text-white" href="#">Sair</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link active fw-bold" href="index.php">Estoque</a>
+                    <a class="nav-link" href="vendas/index.php">Vendas</a>
+                    <a class="nav-link" href="usuarios/index.php">Usuários</a>
+                </div>
+                <div class="navbar-nav ms-auto align-items-center">
+                    <span class="navbar-text me-3 text-white justify-content-end small">
+                        Olá, <strong><?php echo $_SESSION['usuario_nome']; ?></strong>
+                        (<span class="text-capitalize"><?php echo $_SESSION['usuario_perfil']; ?></span>)
+                    </span>
+                    <a class="btn btn-sm btn-outline-light px-3" href="logout.php">Sair</a>
+                </div>
             </div>
         </div>
     </nav>
