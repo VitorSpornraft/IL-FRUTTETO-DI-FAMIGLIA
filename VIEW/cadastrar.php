@@ -1,6 +1,16 @@
 <?php
 //VIEW/cadastrar.php
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once "../DAL/conexao.php";
 

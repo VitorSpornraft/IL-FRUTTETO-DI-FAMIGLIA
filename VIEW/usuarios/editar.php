@@ -1,5 +1,15 @@
 <?php
 // VIEW/usuarios/editar.php
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
 require_once "../../DAL/conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
