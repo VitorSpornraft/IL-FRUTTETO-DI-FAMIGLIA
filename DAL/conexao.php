@@ -139,3 +139,26 @@ function verificarLogin($conexao, $email, $senha)
     }
     return false;
 }
+
+function listarLotes($conexao) {
+    $sql = "SELECT l.id, p.nome_fruta, l.quantidade_entrada, l.data_entrada 
+            FROM lotes l 
+            INNER JOIN produtos p ON l.produto_id = p.id 
+            ORDER BY l.data_entrada DESC";
+    return mysqli_query($conexao, $sql);
+}
+
+function inserirLote($conexao, $produto_id, $quantidade) {
+    $sql_lote = "INSERT INTO lotes (produto_id, quantidade_entrada) 
+                 VALUES ($produto_id, $quantidade)";
+    
+    if (mysqli_query($conexao, $sql_lote)) {
+        $sql_estoque = "UPDATE produtos 
+                        SET quantidade_estoque = quantidade_estoque + $quantidade 
+                        WHERE id = $produto_id";
+        
+        return mysqli_query($conexao, $sql_estoque);
+    }
+    
+    return false;
+}

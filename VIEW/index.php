@@ -39,6 +39,7 @@ $resumo = buscarResumoEstoque($conexao);
                 <div class="navbar-nav me-auto">
                     <a class="nav-link active fw-bold" href="index.php">Estoque</a>
                     <a class="nav-link" href="vendas/index.php">Vendas</a>
+                    <a class="nav-link" href="lotes/index.php">Lotes</a>
                     <a class="nav-link" href="usuarios/index.php">Usuários</a>
                 </div>
                 <div class="navbar-nav ms-auto align-items-center">
